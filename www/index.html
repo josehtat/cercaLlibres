@@ -9,24 +9,64 @@
   <title>Cerca de llibres</title>
 </head>
 <body>
+  <!-- PESTANYES -->
   <ul id="tabs-swipe-demo" class="tabs">
     <li class="tab col s6"><a class="active" href="#search-tab">Cerca</a></li>
     <li class="tab col s6"><a href="#details-tab">Detalls</a></li>
   </ul>
 
+  <!-- PESTANYA 1: CERCA I RESULTATS -->
   <div id="search-tab" class="col s12">
     <div class="container">
-      <div class="input-field">
-        <input id="search-input" type="text" placeholder="Introdueix el títol o autor">
-        <label for="search-input">Cerca de llibres</label>
+      <div class="card hoverable" id="search-card">
+        <div class="card-content">
+
+          <span class="card-title center-align">Busca el teu llibre</span>
+
+          <!-- Cercador per text -->
+          <div class="input-field">
+            <i class="material-icons prefix">search</i>
+            <input id="search-input" type="text" placeholder="Títol, autor o ISBN">
+            <label for="search-input">Cerca de llibres</label>
+          </div>
+          <div class="center-align">
+            <button id="search-button" class="btn-large waves-effect waves-light">
+              <i class="material-icons left">send</i>Explora
+            </button>
+          </div>
+
+          <!-- Cercador per ISBN -->
+          <div class="input-field" style="margin-top:24px;">
+            <i class="material-icons prefix">book</i>
+            <input id="isbn-input" type="text" placeholder="9780140328721">
+            <label for="isbn-input">Buscar per ISBN</label>
+          </div>
+          <div class="center-align">
+            <button id="isbn-button" class="btn-flat waves-effect">
+              <i class="material-icons left">launch</i>Veure ISBN
+            </button>
+          </div>
+
+          <hr style="margin: 24px 0; border-color: #eee;">
+
+          <!-- Preloader -->
+          <div id="loading" class="preloader-wrapper big active" style="display: none; margin: 20px auto;">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left"><div class="circle"></div></div>
+              <div class="gap-patch"><div class="circle"></div></div>
+              <div class="circle-clipper right"><div class="circle"></div></div>
+            </div>
+          </div>
+
+          <!-- Llista de resultats -->
+          <ul id="results-list" class="collection"></ul>
+
+        </div>
       </div>
-      <button id="search-button" class="btn waves-effect waves-light">
-        <i class="material-icons left">search</i>Cerca
-      </button>
-      <ul id="results-list" class="collection"></ul>
     </div>
   </div>
 
+  <!-- PESTANYA 2: DETALLS -->
   <div id="details-tab" class="col s12">
     <div class="container" id="book-details">
       <h5>Selecciona un llibre per veure'n els detalls</h5>
