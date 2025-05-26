@@ -1,26 +1,40 @@
 <!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <title>Cerca de llibres</title>
+</head>
+<body>
+  <ul id="tabs-swipe-demo" class="tabs">
+    <li class="tab col s6"><a class="active" href="#search-tab">Cerca</a></li>
+    <li class="tab col s6"><a href="#details-tab">Detalls</a></li>
+  </ul>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <link rel="stylesheet" href="css/materialize.css">
-        <link rel="stylesheet" href="css/index.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-        <title>Tab Swipe</title>
-    </head>
-    <body>
-        <ul id="tabs-swipe-demo" class="tabs">
-            <li class="tab col s3"><a href="#test-swipe-1">Formulario</a></li>
-            <li class="tab col s3"><a class="active" href="#test-swipe-2">Detalles Libro</a></li>
-        </ul>
-        <div id="test-swipe-1" class="col s12 white">Formulario</div>
-        <div id="test-swipe-2" class="col s12 white">Detalles del libro</div>
+  <div id="search-tab" class="col s12">
+    <div class="container">
+      <div class="input-field">
+        <input id="search-input" type="text" placeholder="Introdueix el títol o autor">
+        <label for="search-input">Cerca de llibres</label>
+      </div>
+      <button id="search-button" class="btn waves-effect waves-light">
+        <i class="material-icons left">search</i>Cerca
+      </button>
+      <ul id="results-list" class="collection"></ul>
+    </div>
+  </div>
 
-       
+  <div id="details-tab" class="col s12">
+    <div class="container" id="book-details">
+      <h5>Selecciona un llibre per veure'n els detalls</h5>
+    </div>
+  </div>
 
-        <script src="cordova.js"></script>
-        <script src="js/materialize.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+  <script src="cordova.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/index.js"></script>
+</body>
 </html>
