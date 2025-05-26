@@ -126,7 +126,22 @@ html, body {
    * afegir la class tabs-content a cada div de contingut
    * per solucionar el contingut scollable de cada pestanya
    */
-  .tabs-content {
+.tabs-content {
     height: 100%;
     overflow-y: scroll !important;
+}
+#results-list {
+    margin-top: 20px;
+}
+
+#book-details {
+    margin-top: 20px;
+}
+.tabs {
+    display: flex !important;
+    justify-content: center !important;
   }
+  
+.tabs .tab {
+    float: none !important; 
+}
